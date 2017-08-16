@@ -7,12 +7,12 @@ title: anjiecc
 subtitle:
 description: 个人博客、前端技术分享、javascript、vue
 author: MickeyAj
-language:
+language: zh
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.anjiecc.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -80,3 +80,4 @@ deploy:
   type: git
   repo: https://github.com/anjiecc/anjiecc.github.io.git
   branch: master
+

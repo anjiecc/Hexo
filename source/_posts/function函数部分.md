@@ -2,7 +2,7 @@
 title: Javascript Function和函数学习笔记
 date: 2017-8-16 15:29
 tags: javascript
-categories: MickeyAj
+categories: javascript函数
 
 ---
 详细介绍javascript中函数的使用
