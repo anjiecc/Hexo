@@ -1,0 +1,61 @@
+author: MickeyAj # 作者
+description: javaScript
+keyword: hexo-theme, vuejs
+favicon: 
+
+excerpt_link: Read more
+
+menu:
+ Home: /
+ Tags: /tags/
+ Archives: /archives/
+ Projects: /project/
+ About: /about/
+
+# highlight
+highlight:
+  tomorrow
+
+# catalog
+catalog: true
+
+# donate
+donate: true
+
+# qrcode
+qrcode: true
+
+# comment
+# you can set gitment, uyan or disqus
+
+comment: gitment
+
+# gitment config
+gitment_owner: anjiecc
+gitment_repo: anjiecc.github.io
+gitment_oauth_id: 03cc16ea3e36613803ae
+gitment_oauth_secret: ad41577b505b4906cf211c1b9dbfd77d9c9cbb44
+
+# uyan config
+# if you want to use uyan as your blog comment, plz remove/comment out gitment config
+baidu_id: 
+
+# disqus config
+disqus_shortname: 
+
+about: 
+  banner: http://file.muyutech.com/about.jpg
+  avatar: 
+  description: "Whatever is worth doing is worth doing well"
+  weibo_username: 
+  twitter_username: 
+  github_username: anjiecc
+  zhihu_username: 
+  douban_username: 
+  linkedin_username:
+
+# MathJax Support
+mathjax:
+  enable: true
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
