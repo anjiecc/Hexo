@@ -1,10 +1,8 @@
 ---
 title: "TypeScript入门教程(一) - 基础类型"
 date: 2018-10-04 11:00
-banner: your-banner-link.jpg
 tags:
  - TypeScript
- - 学习笔记
 ---
 `Typescript`中的基础类型和`JavaScript`中定义的五种基本类型(`Number`,`String`,`Boolean`,`Undefined`,`Null`)几乎相同,还新增了枚举类型,接下来我们详细介绍`TypeScript`中的基础类型
 <!--more-->

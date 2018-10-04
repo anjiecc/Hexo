@@ -1,7 +1,7 @@
 ---
 title: js原型继承五条基本原则
 date: 2017-08-23 09:12:52
-tags: [js,设计模式,学习笔记]
+tags: [学习笔记]
 categories: js原型继承
 ---
 
@@ -24,18 +24,21 @@ js在设计的时候引入了java两套类型机制：**基本类型**和**引�
 
 在js中根对象(**Object.prototype**)是一个空的对象，我们遇到的每一个对象都是从**Object.prototype**对象克隆而来，**Object.prototype**对象就是它们的原型。
 
+```javascript
     var obj_1 = new Object();
     var obj_2 = {};
     
     //通过Object.getPrototypeOf来查看它们的原型
     console.log(Object.getPrototypeOf(obj_1) === Object.prototype); // true
     console.log(Object.getPrototypeOf(obj_2) === Object.prototype); // true    
-    
+```
+
 ### 要得到一个对象，不是通过实例化类，而是找到一个对象作为原型并克隆它
 在js中我们并不需要关心克隆的细节，因为这些操作浏览器引擎内部已经实现了，我们只需要显式地调用`var obj = new Object()或者var obj = {}`，引擎会从`Object.prototype`上克隆一个对象出来。
 
 我们也可以通过new操作符来创建一个对象
 
+```javascript
     function Person(name){
         this.name= name;
     };
@@ -49,7 +52,8 @@ js在设计的时候引入了java两套类型机制：**基本类型**和**引�
     console.log(r.name);//anjie
     console.log(r.getName());//anjie
     console.log(Object.getPrototypeOf(r) === Person.prototype); // true
-    
+```
+
 **我们通过new得到的对象具体做了什么？**
 要创建 Person 的新实例，必须使用 new 操作符。以这种方式调用构造函数实际上会经历以下 4
 个步骤：
@@ -60,16 +64,17 @@ js在设计的时候引入了java两套类型机制：**基本类型**和**引�
 4. 返回新对象；
 
 new操作符具体做了3件事
-
+```javascript
     // 创建空对象
     var r = {}; 
     //将这个空对象的__proto__成员指向了Person函数对象prototype成员对象
     r.__proto__ = Person.prototype  
     //将Person函数对象的this指针替换成r，然后再调用Person函数,给r添加属性和方法
     Person.call(r)
-    
-**模仿new操作符**
+```
 
+**模仿new操作符**
+```javascript
     function Person(name){
         this.name = name;
     }
@@ -91,13 +96,16 @@ new操作符具体做了3件事
     console.log(a.name);//anjie
     console.log(a.getName());//anjie
     console.log(Object.getPrototypeOf(a) === Person.prototype); // true
+```
 
 ### 对象会记住它的原型
 js给对象提供了一个名为`__proto__`的隐藏属性，某个对象的`__proto__`属性默认会指向它的构造器的原型对象，即`{Constructor.prototype}`,在一些浏览器中，`__proto__`被公开出来了(Chrome/Firefox)
 
+```javascript
     var a = new Object();
     console.log(a.__proto__ === Object.prototype); //true
-    
+```
+
 `__proto__`就是对象跟对象构造器的原型联系起来的桥梁，正因为对象通过`__proto__`来记住的构造器的原型，我们上面模拟new操作符需要手动的给obj对象设置正确的`__proto__`指向
 
 ### 如果对象无法响应某个请求，它会把这个请求委托给它自己的原型
@@ -107,6 +115,7 @@ js对象最初都是由`Object.prototype`克隆而来，但是对象构造器的
 
 **下面的代码是我们常用的原型继承方式：**
 
+```javascript
     var obj = {name:'anjie'};
     
     var A = function(){}
@@ -116,6 +125,8 @@ js对象最初都是由`Object.prototype`克隆而来，但是对象构造器的
     var a = new A();
     
     console.log(a.name);//anjie
+```
+
 **上面的代码引擎内部做了什么？**
 
 * 遍历对象a中的所有属性，但是没有name这个属性
@@ -124,6 +135,7 @@ js对象最初都是由`Object.prototype`克隆而来，但是对象构造器的
 
 **当我们期望得到一个类继承自另一个类时**我们通常会使用下面这段代码：
 
+```javascript
     var A = function(){};
     A.prototype = {
         name:'anjie'
@@ -134,7 +146,8 @@ js对象最初都是由`Object.prototype`克隆而来，但是对象构造器的
     
     var b = new B();
     console.log(b.name);//anjie
-    
+```
+
 **上面的代码引擎内部做了什么？**
 
 * 遍历对象a中的所有属性，但是没有name这个属性
@@ -146,7 +159,7 @@ js对象最初都是由`Object.prototype`克隆而来，但是对象构造器的
 
 ES6的中带来了新的`Class`语法，让js看起来更加想一门基于类的语言，其实背后还是通过原型机制来实现的。
 
-
+```javascript
     Class Person{
         constructor(name){
             this.name = name;
@@ -164,5 +177,6 @@ ES6的中带来了新的`Class`语法，让js看起来更加想一门基于类�
     
     var a = new manPerson('anjie');
     console.log(a.getName());//anjie
-    
+```
+
 总结就写到这里了，本文简单介绍了js中原型继承的机制，希望通过学习的我们的学习总结笔记让大家也有收获，如果有什么不对的地方，望大家指点出来，我们共同学习。
