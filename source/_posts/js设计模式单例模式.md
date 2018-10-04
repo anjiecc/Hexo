@@ -149,8 +149,7 @@ tags: [设计模式]
     ```
 
 2. 使用闭包封装私有变量
-
-```javascript
+    ```javascript
     var user = (function(){
         var __name = 'anjie',
             __age = 25,
@@ -161,38 +160,36 @@ tags: [设计模式]
             }
         }    
     })();
-```        
+    ```        
         
    **我们使用下划线来约定私有变量__name和__age,他们被封装在闭包产生的作用域中，外部是访问不到这两个变量的，这样就避免了对全局的命令污染。**
    
 ###  通用单例模式     
 
-直接上代码：
-
 ```javascript
-    var getSingle = function(fn){
-        var result;
-        return function(){
-            return result || (result = fn.apply(this,arguments));
-        }
+var getSingle = function(fn){
+    var result;
+    return function(){
+        return result || (result = fn.apply(this,arguments));
     }
-    
-    //实例
-    var createDiv = function(){
-        var div = $('<div></div>');
-        div.html('这个是测试div');
-        div.css('display','none');
-        $('body').append(div);
-        return div;
-    }
-    
-    var createSingleLoginLayer = getSingle(createDiv);
-    
-    $('loginBtn').on('click',function(){
-        var loginLayer = createSingleLoginLayer();
-        loginLayer.css('display','block');
-    })
-```   
+}
+
+//实例
+var createDiv = function(){
+    var div = $('<div></div>');
+    div.html('这个是测试div');
+    div.css('display','none');
+    $('body').append(div);
+    return div;
+}
+
+var createSingleLoginLayer = getSingle(createDiv);
+
+$('loginBtn').on('click',function(){
+    var loginLayer = createSingleLoginLayer();
+    loginLayer.css('display','block');
+})
+```
     
 **上面代码是一个通用的单例模式，我们在日常开发中可以直接利用这段代码来实现单例模式。**
 
