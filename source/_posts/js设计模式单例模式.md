@@ -149,20 +149,21 @@ tags: [设计模式]
     ```
 
 2. 使用闭包封装私有变量
-    ```javascript
-    var user = (function(){
-        var __name = 'anjie',
-            __age = 25,
-            
-        return {
-            getUserInfo:function(){
-                return __name + '-' + __age;
-            }
-        }    
-    })();
-    ```        
+
+```javascript
+var user = (function(){
+    var __name = 'anjie',
+        __age = 25,
         
-   **我们使用下划线来约定私有变量__name和__age,他们被封装在闭包产生的作用域中，外部是访问不到这两个变量的，这样就避免了对全局的命令污染。**
+    return {
+        getUserInfo:function(){
+            return __name + '-' + __age;
+        }
+    }    
+})();
+```        
+        
+**我们使用下划线来约定私有变量__name和__age,他们被封装在闭包产生的作用域中，外部是访问不到这两个变量的，这样就避免了对全局的命令污染。**
    
 ###  通用单例模式     
 
@@ -190,7 +191,7 @@ $('loginBtn').on('click',function(){
     loginLayer.css('display','block');
 })
 ```
-    
+
 **上面代码是一个通用的单例模式，我们在日常开发中可以直接利用这段代码来实现单例模式。**
 
 ****
