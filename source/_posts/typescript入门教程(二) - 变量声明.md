@@ -131,4 +131,7 @@ let { a, b } = o;
 
 上面简单的介绍了数组解构和对象解构，如果你想详情了解还是推荐你去[ECMAScript 6 入门-阮一峰](http://es6.ruanyifeng.com/#docs/let)这个对ES6进行非常详细的介绍，相信你会学到很多ES6中所有新特性
 
+
 上面我们介绍了`TypeScript`的变量声明，第三节我们将介绍接口
+
+> 文章参考[TypeScript中文网](https://www.tslang.cn/docs/handbook/variable-declarations.html)

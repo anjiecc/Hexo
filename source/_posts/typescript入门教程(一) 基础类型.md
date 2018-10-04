@@ -116,3 +116,5 @@ function fn3(): never {
 ```
 
 上面我们介绍了`TypeScript`的基础类型，第二节我们将介绍变量声明
+
+> 文章参考[TypeScript中文网](https://www.tslang.cn/docs/handbook/basic-types.html)
