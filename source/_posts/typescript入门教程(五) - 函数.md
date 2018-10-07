@@ -1,6 +1,6 @@
 ---
 title: "TypeScript入门教程(五) - 函数"
-date: 2018-10-07 03:29
+date: 2018-10-08 19:29
 tags:
  - TypeScript
 ---
