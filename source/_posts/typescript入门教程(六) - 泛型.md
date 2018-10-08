@@ -91,6 +91,6 @@ fn1.height = 100
 fn1.setStyle = function(width, height) {return {width,height}}
 ```
 
-上面我们介绍了`TypeScript`的泛型，第期节我们将介绍枚举
+上面我们介绍了`TypeScript`的泛型，第七节我们将介绍枚举
 
 > 文章参考[TypeScript中文网](https://www.tslang.cn/docs/handbook/variable-declarations.html)

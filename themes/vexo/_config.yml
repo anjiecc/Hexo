@@ -1,4 +1,4 @@
-author: MickeyAj # 作者
+author: Xiaoai # 作者
 description: javaScript
 keyword: hexo-theme, vuejs
 favicon: 
@@ -45,7 +45,7 @@ disqus_shortname:
 
 about: 
   banner: http://file.muyutech.com/about.jpg
-  avatar: 
+  avatar: https://avatars2.githubusercontent.com/u/16866569?v=4
   description: "Whatever is worth doing is worth doing well"
   weibo_username: 
   twitter_username: 
