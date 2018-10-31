@@ -19,3 +19,5 @@ Hexo 博客文件<br/>
 
 执行 `hexo -s` 在浏览器打开  `http://localhost:4000` 查看<br/>
 执行 `hexo -g    hexo -d` 上传到github上
+
+简写 `hexo d -g` 让 Hexo 在生成完毕后自动部署网站
