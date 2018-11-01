@@ -122,6 +122,7 @@ type-block__element_modifier
 `BEM`方法论为`BEM`实体的命名提供了基本的原则。选择哪一种命名方式取决于你项目的需求和你的个人喜好。使用方法论中提到的命名约定的一大优势在于具有现成的面向“经典命名”的开发工具
 
 
-> 文章参考  [译】BEM CSS命名规范三 Naming convention](https://www.jianshu.com/p/410a71771d78)
+> 文章参考  
+[【译】BEM CSS命名规范三 Naming convention](https://www.jianshu.com/p/410a71771d78)
 [W3cschool](https://www.w3cschool.cn/weflow/weflow-bem.html)
 [Yandex BEM/OOCSS](https://docs.emmet.io/filters/bem/)
